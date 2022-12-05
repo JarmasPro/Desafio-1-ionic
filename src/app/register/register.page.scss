@@ -6,7 +6,7 @@
   margin: 0px;
 }
 #regis-form{
-  width: 90%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,20 +16,18 @@
   background-color: white;
   color: black;
 }
-.form-group{
+.col{
   width: 85%;
+}
+.form-group{
+  width: 100%;
   margin: 3%;
 }
+
 .form-control{
   width: 100%;
   background-color: rgb(237, 233, 233);
-  border-radius: 3px;
-}
-.btn{
-  height: 50px;
-  font-size: 1.1em;
   border-radius: 5px;
-  width: 100%;
 }
 
 .fondo {
@@ -44,9 +42,31 @@ form > h2 {
   font-size: 2em;
 }
 
+.button-group{
+  display: flex;
+  justify-content: space-around;
+  margin: 4%;
+  width: 85%;
+  height: 150%;
+}
+
+.btn{
+  width: 40%;
+  height: 50px;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
 @media (orientation: landscape) {
-  #regis-form{
-    width: 50%;
+  .col{
+    display: flex;
+    justify-content: space-between;
+    div{
+      width: 85%;
+    }
+  }
+  .form-group{
+    margin: 5%;
   }
 }
 @media(max-height:316px){

@@ -7,6 +7,14 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'linterna',
+    loadChildren: () => import('./linterna/linterna.module').then( m => m.LinternaPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'

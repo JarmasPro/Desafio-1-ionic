@@ -1,20 +1,35 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  <ion-toolbar color="Dark">
+    <ion-title style="font-family: Covered By Your Grace; color: rgb(237, 237, 5);">
+      flashlight
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/home']">
+        <ion-icon name="person-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/register']">
+        <ion-icon name="person-add-outline"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/linterna']">
+        <ion-icon name="flashlight-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="form-container fondo" style="height: 100%; background-image: url('../../../assets/thumb-1920-456536.jpg');">
+    <form id="regis-form">
+      <h2><b>Inicio</b></h2>
+      <div class="form-group">
+          <input id="username" class="form-control" required type="text" name="username" minlength="6" placeholder="Usuario">
+      </div>
+      <div class="form-group">
+        <input id="contrasena" class="form-control" required type="password" name="contrasena" minlength="8" placeholder="Contraseña">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn verde">INICIAR</button>
+      </div>
+    </form>
   </div>
 </ion-content>
