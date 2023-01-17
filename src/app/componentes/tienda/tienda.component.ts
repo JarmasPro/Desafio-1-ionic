@@ -1,13 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-tienda',
+  templateUrl: './tienda.component.html',
+  styleUrls: ['./tienda.component.scss'],
 })
-export class HomePage {
+export class TiendaComponent implements OnInit {
+
+  productos = [
+    {
+      nombre:'Morral De Montaña Trekking De Flores 10 L',
+      precio:19.99,
+      img:'../../../assets/bolso de flores.jpg',
+      id:0
+    },
+    {
+      nombre:'Bolso De Moto Impermeable',
+      precio:69.99,
+      img:'../../../assets/bolso de moto.jpg',
+      id:1
+    },
+    {
+      nombre:'Bolso Urbano Swissgear Morral Grande Unisex Escolar Laptop',
+      precio:20,
+      img:'../../../assets/bolso para lapto.jpg',
+      id:2
+    }
+  ]
 
   constructor(private actionSheetCtrl: ActionSheetController, private router: Router) {}
 
@@ -49,7 +70,7 @@ export class HomePage {
         {
           text: 'Cancel',
           role: 'cancel',
-          icon:'close',
+          icon: 'close',
           data: {
             action: 'cancel',
           },
@@ -59,5 +80,7 @@ export class HomePage {
 
     await actionSheet.present();
   }
+
+  ngOnInit() {}
 
 }

@@ -1,17 +1,11 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="Dark">
+<ion-header>
+  <ion-toolbar color="Dark" style="background-color: black;">
     <ion-title style="font-family: Covered By Your Grace; color: rgb(237, 237, 5);">
       flashlight
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button [routerLink]="['/home']">
-        <ion-icon name="person-circle-outline"></ion-icon>
-      </ion-button>
-      <ion-button [routerLink]="['/register']">
-        <ion-icon name="person-add-outline"></ion-icon>
-      </ion-button>
-      <ion-button [routerLink]="['/linterna']">
-        <ion-icon name="flashlight-outline"></ion-icon>
+      <ion-button (click)="presentActionSheet()">
+        <ion-icon name="menu-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -19,17 +13,19 @@
 
 <ion-content [fullscreen]="true">
   <div class="form-container fondo" style="height: 100%; background-image: url('../../../assets/thumb-1920-456536.jpg');">
-    <form id="regis-form">
-      <h2><b>Inicio</b></h2>
-      <div class="form-group">
-          <input id="username" class="form-control" required type="text" name="username" minlength="6" placeholder="Usuario">
-      </div>
-      <div class="form-group">
-        <input id="contrasena" class="form-control" required type="password" name="contrasena" minlength="8" placeholder="Contraseña">
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn verde">INICIAR</button>
-      </div>
-    </form>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+      <form id="regis-form">
+        <h2><b>Inicio</b></h2>
+        <div class="form-group">
+            <input id="username" class="form-control" required type="text" name="username" minlength="6" placeholder="Usuario">
+        </div>
+        <div class="form-group">
+          <input id="contrasena" class="form-control" required type="password" name="contrasena" minlength="8" placeholder="Contraseña">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn verde">INICIAR</button>
+        </div>
+      </form>
+    </div>
   </div>
 </ion-content>

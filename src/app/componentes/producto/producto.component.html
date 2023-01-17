@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="Dark" style="background-color: black;">
+    <ion-title style="font-family: Covered By Your Grace; color: rgb(237, 237, 5);">
+      flashlight
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="presentActionSheet()">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngFor="let producto of productos">
+    <div *ngIf="producto.id === productID">
+      <h3 style="text-align: center;">
+        {{ producto.nombre }}
+      </h3>
+      <div style="display: flex; justify-content: center;">
+        <img [src]="producto.img" [alt]="producto.nombre" style="margin: 0px;">
+      </div>
+      <form action="" style="margin: 0px;" id="mensaje-form"  #fromMesaje="ngForm">
+        <input placeholder="Nombre" style="width: 100%;" #nombre="ngModel" [(ngModel)]="modelo.nombre" name="nombre" type="text" minlength="3" required>
+        <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" style="color: red;">
+          <div *ngIf="nombre.errors?.['required'] || nombre.errors?.['minlength']">
+            Error: nombre es obligatirio y requiere un minimo de 3 caracteres.
+          </div>
+        </div>
+        <input placeholder="Correo" style="width: 100%;" #correo="ngModel"  [(ngModel)]="modelo.correo" name="correo" type="email" required>
+        <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" style="color: red;">
+          <div *ngIf="correo.errors?.['required'] || correo.errors?.['minlength']">
+            Error: El correo es obligatirio y debe tener el debido formato.
+          </div>
+        </div>
+        <textarea name="mensaje" rows="10" style="width: 100%;" #mensaje="ngModel" [(ngModel)]="modelo.mensaje" placeholder="Mensaje..." required></textarea>
+        <div *ngIf="mensaje.invalid && (mensaje.dirty || mensaje.touched)" style="color: red;">
+          <div *ngIf="mensaje.errors?.['required'] || mensaje.errors?.['minlength']">
+            Error: Debe indicar sus dudas.
+          </div>
+        </div>
+        <ion-button [color]="color" expand="block" style="font-weight: 700;" [disabled]="activo" (click)="ubicacion()">
+          <ion-icon [name]="icon"></ion-icon>
+          Ubicar
+        </ion-button>
+        <ion-button color="primary" expand="block" style="font-weight: 700;" (click)="enviarSms()" [disabled]="(!activo || !fromMesaje.form.valid)">
+          Enviar
+        </ion-button>
+      </form>
+    </div>
+  </div>
+</ion-content>

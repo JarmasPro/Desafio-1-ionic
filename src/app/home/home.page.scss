@@ -1,10 +1,11 @@
 .form-container{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  overflow-y: auto;
 }
+
 #regis-form{
   width: 90%;
   display: flex;
@@ -49,7 +50,7 @@ form > h2 {
     width: 50%;
   }
 }
-@media(max-height:316px){
+@media(max-height:316px) and (orientation: landscape){
   form > h2 {
     font-size: 1.3em;
   }

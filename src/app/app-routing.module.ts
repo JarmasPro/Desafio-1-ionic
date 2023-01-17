@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { ProductoComponent } from './componentes/producto/producto.component';
+import { TiendaComponent } from './componentes/tienda/tienda.component';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path:'tienda',
+    component: TiendaComponent
+  },
+  {
+    path: 'producto/:id',
+    component: ProductoComponent
   },
   {
     path: 'linterna',
@@ -18,7 +28,7 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },
+  }
 ];
 
 @NgModule({

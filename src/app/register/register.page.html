@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="Dark">
+  <ion-toolbar color="Dark" style="background-color: black;">
     <ion-title style="font-family: Covered By Your Grace; color: rgb(237, 237, 5);">
       flashlight
     </ion-title>
@@ -18,42 +18,75 @@
 </ion-header>
 
 <ion-content>
-
-  <div class="form-container fondo" style="height: 100%; background-image: url('../../../assets/thumb-1920-456536.jpg');">
-    <form id="regis-form">
-      <h2>
-        <b>
-          Registro
-        </b>
-      </h2>
-      <div class="col">
+  <div class="form-container" style="height: 100%; background-image: url('../../../assets/thumb-1920-456536.jpg');">
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+      <form id="regis-form" style="margin: auto;">
+        <h2>
+          <b>
+            Registro
+          </b>
+        </h2>
         <div>
-          <div class="form-group">
-            <input id="nombre" class="form-control" required type="text" name="nombre" minlength="3" placeholder="Nombre">
+          <div style="display: flex; justify-content: center;">
+            <div class="img">
+              <img [src]="usuario" alt="" style="width: 100%;">
+            </div>
           </div>
-          <div class="form-group">
-            <input id="apellido" class="form-control" required type="text" name="apellido" minlength="4" placeholder="Apellido">
-          </div>
-          <div class="form-group">
-            <input id="username" class="form-control" required type="text" name="username" minlength="6" placeholder="Usuario">
+          <div style="display: flex; justify-content: center;">
+            <input type="button" name="fotoDePerfil" id="foto" class="secun-btn" (click)="tomarFoto()" value="Foto de perfil">
           </div>
         </div>
-        <div>
-          <div class="form-group">
-            <input id="contrasena" class="form-control" required type="password" name="contrasena" minlength="8" placeholder="Contraseña">
+        <div class="col-container">
+          <div class="col">
+            <div class="form-group">
+              <input id="nombre" class="form-control" required type="text" name="nombre" minlength="3" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+              <input id="apellido" class="form-control" required type="text" name="apellido" minlength="4" placeholder="Apellido">
+            </div>
+            <div class="form-group">
+              <input id="username" class="form-control" required type="text" name="username" minlength="6" placeholder="Usuario">
+            </div>
           </div>
-          <div class="form-group">
-            <input id="correo" class="form-control" required type="email" name="correo" minlength="12" placeholder="Correo">
-          </div>
-          <div class="form-group">
-              <input id="telefono" class="form-control" required type="text" name="telefono" minlength="11" placeholder="Telefono">
+          <div class="col">
+            <div class="form-group">
+              <input id="contrasena" class="form-control" required type="password" name="contrasena" minlength="8" placeholder="Contraseña">
+            </div>
+            <div class="form-group">
+              <input id="correo" class="form-control" required type="email" name="correo" minlength="12" placeholder="Correo">
+            </div>
+            <div class="form-group">
+                <input id="telefono" class="form-control" required type="text" name="telefono" minlength="11" placeholder="Telefono">
+            </div>
           </div>
         </div>
-      </div>
-      <div class="button-group">
-        <button type="submit" class="btn verde">Enviar</button>
-        <button type="reset" class="btn rojo">Limpiar</button>
-      </div>
-    </form>
+        <div style="width: 63%;">
+          <div style="display: flex; justify-content: center; text-align: center;">
+            <h4>
+              <b>
+                Ubicacion de residencia
+              </b>
+            </h4>
+          </div>
+          <div class="ubi">
+            <div class="form-group">
+              <p style="text-align: center; font-size: 0.6em; margin: 1%;"><b>Latitud</b></p>
+              <input id="latitud" class="form-control" required type="number" name="latitud" minlength="12" [value]="latitud">
+            </div>
+            <div class="form-group">
+                <p style="text-align: center; font-size: 0.6em; margin: 1%;"><b>Longitud</b></p>
+                <input id="longitud" class="form-control" required type="number" name="longitud" minlength="11" [value]="longitud">
+            </div>
+          </div>
+          <div style="display: flex; justify-content: center;">
+            <input type="button" name="ubicacionDeResidencia"  class="secun-btn" (click)="ubicacion()" value="Ubicar">
+          </div>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn verde">Enviar</button>
+          <button type="reset" class="btn rojo">Limpiar</button>
+        </div>
+      </form>
+    </div>
   </div>
 </ion-content>
